@@ -1,0 +1,308 @@
+/* Wallet Components */
+
+/* Wallet Overview */
+.wallet-overview {
+  margin-bottom: var(--spacing-xl);
+  width: 100%;
+}
+
+.wallet-details-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  width: 100%;
+}
+
+/* Balance Card */
+.balance-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  width: 100%;
+}
+
+.balance-amount {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-weight: 600;
+  color: var(--cardano-blue);
+  display: flex;
+  align-items: baseline;
+  gap: var(--spacing-xs);
+  word-break: break-all;
+  line-height: 1.2;
+}
+
+.balance-amount::after {
+  content: '₳';
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  color: var(--text-gray);
+}
+
+/* Token List */
+.token-list {
+  display: grid;
+  gap: var(--spacing-sm);
+  width: 100%;
+}
+
+.token-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-sm);
+  background: var(--bg-gray);
+  border-radius: var(--radius-sm);
+  word-break: break-all;
+  overflow-wrap: break-word;
+}
+
+.token-info {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  min-width: 0;
+  flex: 1;
+}
+
+.token-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+}
+
+.token-name {
+  font-weight: 500;
+  font-size: clamp(0.75rem, 2vw, 0.9rem);
+  word-break: break-all;
+  overflow-wrap: break-word;
+  min-width: 0;
+  flex: 1;
+}
+
+.token-amount {
+  font-family: monospace;
+  color: var(--text-gray);
+  font-size: clamp(0.7rem, 1.5vw, 0.85rem);
+  white-space: nowrap;
+}
+
+/* Address Info */
+.address-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  width: 100%;
+  background: var(--white);
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+}
+
+.info-row {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  width: 100%;
+}
+
+.info-row .label {
+  font-size: clamp(0.75rem, 2vw, 0.9rem);
+  color: var(--text-gray);
+  font-weight: 500;
+}
+
+.value-with-copy {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  background: var(--bg-gray);
+  padding: var(--spacing-md);
+  border-radius: var(--radius-sm);
+  width: 100%;
+}
+
+.address-value {
+  font-family: monospace;
+  font-size: clamp(0.7rem, 1.5vw, 0.85rem);
+  word-break: break-all;
+  overflow-wrap: break-word;
+  line-height: 1.4;
+  width: 100%;
+  color: var(--text-gray);
+  background: var(--white);
+  padding: var(--spacing-xs);
+  border-radius: var(--radius-sm);
+}
+
+.copy-btn {
+  margin-left: auto;
+  margin-top: var(--spacing-xs);
+  background: var(--cardano-blue-light);
+  padding: var(--spacing-xs);
+  border-radius: var(--radius-sm);
+  transition: all 0.2s ease;
+}
+
+.copy-btn:hover {
+  background: var(--cardano-blue);
+  color: var(--white);
+}
+
+/* UTXO List */
+.utxo-grid {
+  display: grid;
+  gap: var(--spacing-md);
+  grid-template-columns: 1fr;
+}
+
+.utxo-card {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  border: 2px solid var(--border-color);
+}
+
+.utxo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-sm);
+}
+
+.utxo-hash {
+  font-family: monospace;
+  font-size: var(--text-sm);
+  color: var(--cardano-blue);
+}
+
+.utxo-index {
+  font-size: var(--text-sm);
+  color: var(--text-gray);
+  font-weight: 500;
+}
+
+.utxo-amount {
+  font-size: var(--text-lg);
+  font-weight: 500;
+  color: var(--text-gray);
+  margin-top: var(--spacing-sm);
+}
+
+.utxo-assets {
+  margin-top: var(--spacing-sm);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
+}
+
+.asset-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background: var(--bg-gray);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-sm);
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-lg);
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--border-color);
+}
+
+.pagination-btn {
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  background: var(--white);
+  color: var(--text-gray);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.pagination-btn:hover:not(:disabled) {
+  background: var(--cardano-blue);
+  color: var(--white);
+  border-color: var(--cardano-blue);
+}
+
+.pagination-btn.active {
+  background: var(--cardano-blue);
+  color: var(--white);
+  border-color: var(--cardano-blue);
+}
+
+.pagination-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .wallet-details-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .info-row {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .info-row .label {
+    min-width: 120px;
+    padding-top: var(--spacing-xs);
+  }
+
+  .token-list {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+
+  .utxo-grid {
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .value-with-copy {
+    padding: var(--spacing-sm);
+  }
+
+  .address-value {
+    font-size: clamp(0.65rem, 1.2vw, 0.8rem);
+  }
+
+  .info-row .label {
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .token-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-xs);
+  }
+
+  .token-amount {
+    align-self: flex-end;
+  }
+
+  .utxo-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-xs);
+  }
+
+  .pagination {
+    flex-wrap: wrap;
+  }
+
+  .pagination-btn {
+    font-size: 0.9rem;
+    padding: var(--spacing-xs);
+  }
+}
