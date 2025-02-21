@@ -1684,3 +1684,57 @@ button {
   height: 20px;
   filter: invert(1);
 }
+
+/* Add clickable detail row styles */
+.detail-row.clickable {
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--cardano-blue-light);
+  border: 1px solid var(--cardano-blue);
+  margin: 0.5rem 0;
+}
+
+.detail-row.clickable:hover {
+  background-color: white;
+  border-color: var(--cardano-blue);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.detail-row.clickable:focus {
+  outline: none;
+  border-color: var(--cardano-blue);
+  box-shadow: 0 0 0 2px rgba(0, 70, 250, 0.1);
+}
+
+.detail-row.clickable .detail-value {
+  color: var(--cardano-blue);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 500;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+}
+
+.detail-row.clickable .detail-value svg {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.2s ease;
+}
+
+.detail-row.clickable:hover .detail-value svg {
+  transform: translateX(4px);
+}
+
+@media (max-width: 767px) {
+  .detail-row.clickable {
+    padding: 0.75rem;
+  }
+}

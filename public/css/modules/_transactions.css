@@ -218,20 +218,17 @@
 .detail-row.clickable {
   cursor: pointer;
   transition: all 0.2s ease;
-  padding: var(--spacing-sm) var(--spacing-md);
-  border-radius: var(--radius-sm);
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  -webkit-tap-highlight-color: transparent;
-  touch-action: manipulation;
-  border: 1px solid transparent;
-  margin: 0.25rem 0;
+  background-color: var(--cardano-blue-light);
+  border: 1px solid var(--border-color);
 }
 
-.detail-row.clickable:hover,
-.detail-row.clickable:active {
-  background-color: var(--hover-bg);
+.detail-row.clickable:hover {
+  background-color: white;
   border-color: var(--cardano-blue);
   transform: translateY(-1px);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -244,12 +241,10 @@
 }
 
 .detail-row.clickable .detail-value {
-  color: var(--primary-color);
+  color: var(--cardano-blue);
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  padding: var(--spacing-xs) var(--spacing-sm);
-  min-height: 44px;
   font-weight: 500;
 }
 
@@ -263,12 +258,7 @@
 
 @media (max-width: 767px) {
   .detail-row.clickable {
-    margin: 0.5rem calc(-1 * var(--spacing-sm));
-    padding: var(--spacing-md);
-  }
-
-  .detail-row.clickable .detail-value {
-    font-size: var(--text-base);
+    padding: 0.75rem;
   }
 }
 

@@ -14,7 +14,7 @@
   ],
   "scripts": {
     "start": "node server/server.js",
-    "dev": "NODE_ENV=development nodemon server/server.js",
+    "dev": "NODE_ENV=development npx nodemon server/server.js",
     "vercel-build": "echo 'Building for Vercel deployment...'"
   },
   "dependencies": {
