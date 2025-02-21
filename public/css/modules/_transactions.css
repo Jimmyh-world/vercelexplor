@@ -217,7 +217,7 @@
 
 .detail-row.clickable {
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: all 0.2s ease;
   padding: var(--spacing-sm) var(--spacing-md);
   border-radius: var(--radius-sm);
   display: flex;
@@ -225,16 +225,22 @@
   justify-content: space-between;
   -webkit-tap-highlight-color: transparent;
   touch-action: manipulation;
+  border: 1px solid transparent;
+  margin: 0.25rem 0;
 }
 
 .detail-row.clickable:hover,
 .detail-row.clickable:active {
   background-color: var(--hover-bg);
+  border-color: var(--cardano-blue);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .detail-row.clickable:focus {
-  outline: 2px solid var(--primary-color);
-  outline-offset: -2px;
+  outline: none;
+  border-color: var(--cardano-blue);
+  box-shadow: 0 0 0 2px rgba(0, 70, 250, 0.1);
 }
 
 .detail-row.clickable .detail-value {
@@ -242,13 +248,22 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  padding: var(--spacing-xs) 0;
-  min-height: 44px; /* Ensure touch target is large enough */
+  padding: var(--spacing-xs) var(--spacing-sm);
+  min-height: 44px;
+  font-weight: 500;
+}
+
+.detail-row.clickable .detail-value svg {
+  transition: transform 0.2s ease;
+}
+
+.detail-row.clickable:hover .detail-value svg {
+  transform: translateX(4px);
 }
 
 @media (max-width: 767px) {
   .detail-row.clickable {
-    margin: 0 calc(-1 * var(--spacing-sm));
+    margin: 0.5rem calc(-1 * var(--spacing-sm));
     padding: var(--spacing-md);
   }
 
